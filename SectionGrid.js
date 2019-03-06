@@ -24,12 +24,6 @@ class SectionGrid extends Component {
     };
   }
 
-  componentDidMount() {
-    if (this.props.onRef != null) {
-        this.props.onRef(this)
-    }
-}
-
   onLayout(e) {
     const { staticDimension, onLayout } = this.props;
     const { totalDimension } = this.state;
@@ -147,7 +141,6 @@ class SectionGrid extends Component {
         keyExtractor={(_, index) => `row_${index}`}
         style={style}
         onLayout={this.onLayout}
-        ref={(sectionList) => { this.sectionList = sectionList; }}
         {...restProps}
       />
     );
