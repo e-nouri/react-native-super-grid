@@ -24,6 +24,12 @@ class SectionGrid extends Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.onRef != null) {
+        this.props.onRef(this)
+    }
+}
+
   onLayout(e) {
     const { staticDimension, onLayout } = this.props;
     const { totalDimension } = this.state;
